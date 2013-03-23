@@ -9,24 +9,58 @@ from stock_downloader import StockDownloader
 
 class StockPredicter(object):
 
-    def __init__(self, stock_to_predict):
+    def __init__(self, stock_to_predict, days_of_prediction = 30, days_of_training = 450):
 
         self.number_of_days_before = 8
+        self.days_of_prediction = days_of_prediction
+
         self.downloader = StockDownloader()
 
-        #stock_previous_data = self.downloader.download_stock(stock_to_predict, 365)
+        stock_training_data = self.downloader.download_stock(stock_to_predict, days_of_training, days_of_prediction)
+        self.stock_prediction_data = self.downloader.download_stock(stock_to_predict, days_of_prediction)
 
-        stock_previous_data = np.genfromtxt("apple-small.csv", skip_header=1, usecols=(4), delimiter=',')[::-1]
+        print stock_training_data
 
-        self.starting_price = stock_previous_data[self.number_of_days_before]
+        self.starting_price = stock_training_data[self.number_of_days_before]
+        self.starting_prices = stock_training_data[:-self.number_of_days_before]
 
-        self.dataset = StockSupervisedDataSet(self.number_of_days_before, stock_previous_data)
+        self.dataset = StockSupervisedDataSet(self.number_of_days_before, stock_training_data)
         self.network = buildNetwork(self.dataset.indim, 10, self.dataset.outdim, recurrent=True)
         t = BackpropTrainer(self.network, learningrate = 0.00005,  momentum=0., verbose = True)
-        t.trainOnDataset(self.dataset, 200)
+        t.trainOnDataset(self.dataset, 1000)
         t.testOnData(verbose= True)
 
-    def predict(self):
+
+    def predict_with_starting_price_only(self):
+        figure()
+
+        #Get predicted price and reverse predicted price
+
+        reverse = []
+        predicted = []
+        price = self.starting_prices
+        reverse_price = self.starting_prices
+        for i in range(self.days_of_prediction):
+            predicted_augmentation = self.network.activate(price[-self.number_of_days_before:])
+            reverse_augmentation = self.network.activate(reverse_price[-self.number_of_days_before:])
+            price = price * (1 + predicted_augmentation)
+            reverse_price = reverse_price * (1 - reverse_augmentation)
+            predicted.append(price)
+            reverse.append(reverse_price)
+
+        #Get real price
+        price = self.starting_price
+        real = []
+        for i, target in enumerate(self.stock_prediction_data):
+            price = price * (1+target)
+            real.append(price)
+
+        plot(real, color = "black")
+        plot(predicted, color = "red")
+        plot(reverse, "blue")
+        show()
+
+    def predict_one_day_ahead(self):
         figure()
 
         #Get predicted price and reverse predicted price
@@ -39,7 +73,6 @@ class StockPredicter(object):
                 predicted_augmentation = self.network.activate(self.dataset['input'][i-self.number_of_days_before])
                 price = price * (1 + predicted_augmentation)
                 reverse_price = reverse_price * (1 - predicted_augmentation)
-                print "Price: " ,price
                 predicted.append(price)
                 reverse.append(reverse_price)
 
@@ -52,14 +85,13 @@ class StockPredicter(object):
                 price = price * (1+target)
                 real.append(price)
 
-        print predicted
-        print reverse
-
         plot(real, color = "black")
         plot(predicted, color = "red")
         plot(reverse, "blue")
         show()
 
+
+
 if __name__ == "__main__":
     predicter = StockPredicter("AAPL")
-    predicter.predict()
+    predicter.predict_with_starting_price_only()
