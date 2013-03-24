@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f69ac055-a93d-4a05-973d-1dd49cd56830" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apple-really-small.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apple-small.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apple.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backpropanbncn.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backpropxor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/anbncn.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/parity.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/xor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fnn.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/datasets/stock_dataset.py" afterPath="$PROJECT_DIR$/stock_dataset.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock_dataset.py" afterPath="$PROJECT_DIR$/stock_dataset.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock_downloader.py" afterPath="$PROJECT_DIR$/stock_downloader.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock_predicter.py" afterPath="$PROJECT_DIR$/stock_predicter.py" />
     </list>
     <ignored path="NeuralNetworkStock.iws" />
@@ -32,26 +23,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="stock_predicter.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock_predicter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="43" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stock_dataset.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/stock_dataset.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="8" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0942029">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -64,8 +36,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/stock_downloader.py" />
+        <option value="$PROJECT_DIR$/stock_dataset.py" />
         <option value="$PROJECT_DIR$/stock_predicter.py" />
+        <option value="$PROJECT_DIR$/stock_downloader.py" />
       </list>
     </option>
   </component>
@@ -309,24 +282,26 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/stock_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="457" selection-end="457" vertical-scroll-proportion="0.5289855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stock_downloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="8" selection-start="137" selection-end="137" vertical-scroll-proportion="0.18115942">
+        <state line="15" column="25" selection-start="563" selection-end="563" vertical-scroll-proportion="0.4347826">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stock_predicter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="8" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0942029">
-          <folding />
+        <state line="49" column="16" selection-start="1906" selection-end="1906" vertical-scroll-proportion="-1.1321696">
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -20,7 +20,6 @@ class StockPredicter(object):
         stock_training_data = self.downloader.download_stock(stock_to_predict, days_of_training, days_of_prediction)
         self.stock_prediction_data = self.downloader.download_stock(stock_to_predict, days_of_prediction)
 
-        #self.starting_price = stock_training_data[-self.number_of_days_before:]
         self.starting_price = self.stock_prediction_data[0]
 
         self.dataset = StockSupervisedDataSet(self.number_of_days_before, stock_training_data)

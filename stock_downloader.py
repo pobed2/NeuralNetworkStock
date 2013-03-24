@@ -18,12 +18,6 @@ class StockDownloader(object):
         response = urllib2.urlopen(url)
         file = response.read()
 
-        #print file
         data = np.genfromtxt(StringIO(file), skip_header=1, usecols=(4), delimiter=',')[::-1]
-        #print data
 
         return data
-
-if __name__ == "__main__":
-    downloader = StockDownloader()
-    downloader.download_stock("AAPL", 14, 4)
