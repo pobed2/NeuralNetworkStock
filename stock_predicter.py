@@ -4,8 +4,8 @@ import numpy as np
 from math import ceil
 from pybrain.supervised import BackpropTrainer
 from pybrain.tools.shortcuts import buildNetwork
-from datasets.stock_dataset import StockSupervisedDataSet
-from matplotlib.pyplot import ion, ioff, figure, draw, clf, show, hold, plot
+from stock_dataset import StockSupervisedDataSet
+from matplotlib.pyplot import figure, show, plot
 from stock_downloader import StockDownloader
 
 class StockPredicter(object):
@@ -99,4 +99,4 @@ class StockPredicter(object):
 
 if __name__ == "__main__":
     predicter = StockPredicter("AAPL")
-    predicter.predict_with_starting_price_only()
+    predicter.predict_one_day_ahead()

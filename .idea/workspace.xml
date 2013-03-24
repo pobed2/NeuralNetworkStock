@@ -2,6 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f69ac055-a93d-4a05-973d-1dd49cd56830" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/apple-really-small.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/apple-small.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/apple.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backpropanbncn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backpropxor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/anbncn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/parity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/xor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fnn.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/datasets/stock_dataset.py" afterPath="$PROJECT_DIR$/stock_dataset.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock_predicter.py" afterPath="$PROJECT_DIR$/stock_predicter.py" />
     </list>
     <ignored path="NeuralNetworkStock.iws" />
@@ -22,21 +33,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="stock_predicter.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="stock_predicter.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stock_predicter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="818" selection-end="818" vertical-scroll-proportion="-0.11221945">
-              <folding>
-                <element signature="e#16#34#0" expanded="true" />
-              </folding>
+            <state line="7" column="43" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stock_dataset.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datasets/stock_dataset.py">
+      <file leaf-file-name="stock_dataset.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stock_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="8" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
+            <state line="7" column="8" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0942029">
               <folding />
             </state>
           </provider>
@@ -131,6 +140,11 @@
     <option name="myDjangoConsoleState">
       <PyConsoleSettings />
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.stock_predicter">
     <configuration default="false" name="stock_predicter" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -228,11 +242,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24935733" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24935733" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -295,20 +309,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apple-small.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backpropxor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="31" selection-start="503" selection-end="530" vertical-scroll-proportion="0.4710145">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock_downloader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="8" selection-start="137" selection-end="137" vertical-scroll-proportion="0.18115942">
@@ -316,19 +316,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/stock_dataset.py">
+    <entry file="file://$PROJECT_DIR$/stock_predicter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="8" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
+        <state line="7" column="43" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock_predicter.py">
+    <entry file="file://$PROJECT_DIR$/stock_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="818" selection-end="818" vertical-scroll-proportion="-0.11221945">
-          <folding>
-            <element signature="e#16#34#0" expanded="true" />
-          </folding>
+        <state line="7" column="8" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0942029">
+          <folding />
         </state>
       </provider>
     </entry>
