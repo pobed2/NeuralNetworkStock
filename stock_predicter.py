@@ -1,6 +1,7 @@
 #coding: utf-8
 
 import numpy as np
+from math import ceil
 from pybrain.supervised import BackpropTrainer
 from pybrain.tools.shortcuts import buildNetwork
 from datasets.stock_dataset import StockSupervisedDataSet
@@ -9,7 +10,7 @@ from stock_downloader import StockDownloader
 
 class StockPredicter(object):
 
-    def __init__(self, stock_to_predict, days_of_prediction = 30, days_of_training = 450):
+    def __init__(self, stock_to_predict, days_of_prediction = 10, days_of_training = 450):
 
         self.number_of_days_before = 8
         self.days_of_prediction = days_of_prediction
@@ -18,8 +19,6 @@ class StockPredicter(object):
 
         stock_training_data = self.downloader.download_stock(stock_to_predict, days_of_training, days_of_prediction)
         self.stock_prediction_data = self.downloader.download_stock(stock_to_predict, days_of_prediction)
-
-        print stock_training_data
 
         #self.starting_price = stock_training_data[-self.number_of_days_before:]
         self.starting_price = self.stock_prediction_data[0]
@@ -34,39 +33,37 @@ class StockPredicter(object):
 
 
     def predict_with_starting_price_only(self):
-        figure()
 
         #Get predicted price and reverse predicted price
-
-        price = [self.starting_price]
-        reverse_price = [self.starting_price]
+        prices = [self.starting_price]
         augmentations = list(self.starting_prices)
-        reverse_augmentations = list(self.starting_prices)
-        for i in range(len(self.stock_prediction_data)):
+        for i in range(len(self.stock_prediction_data) - 1):
 
             predicted_augmentation = float(self.network.activate(augmentations[-self.number_of_days_before:]))
-            #reverse_augmentation = float(self.network.activate(reverse_augmentations[-self.number_of_days_before:]))
             augmentations.append(predicted_augmentation)
-            #reverse_augmentations.append(reverse_augmentation)
 
-            print "Predicted augmentations: ", predicted_augmentation
+            new_price = prices[-1] * (1 + predicted_augmentation)
+            prices.append(new_price)
 
-            new_price = price[-1] * (1 + predicted_augmentation)
-            new_reverse_price = reverse_price[-1] * (1 - predicted_augmentation)
-            price.append(new_price)
-            reverse_price.append(new_reverse_price)
-
-        print price
-        print reverse_price
-
+        moving_avg = self.movingaverage(np.array(prices), 5)
 
         #Plot real prices
+        figure()
         plot(self.stock_prediction_data, color = "black")
 
         #Plot predicted
-        plot(price, color = "red")
-        plot(reverse_price, "blue")
+        plot(moving_avg, "green")
         show()
+
+    def movingaverage(self, interval, window_size):
+        window = np.ones(int(window_size))/float(window_size)
+        avg = np.convolve(interval, window, 'same')
+
+        half_window = ceil(window_size/2)
+
+        avg[:half_window] = interval[:half_window]
+        avg[-half_window:] = interval[-half_window:]
+        return avg
 
     def predict_one_day_ahead(self):
         figure()
